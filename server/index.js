@@ -89,6 +89,8 @@ io.on('connection', socket => {
             playerPositions.push({
                 x: session.getX(),
                 y: session.getY(),
+                direction: session.getDirection(),
+                interval: session.getInterval(),
                 name: session.getName(),
                 key: session.getName()
             })
@@ -100,7 +102,9 @@ io.on('connection', socket => {
     socket.on('player', data => {
         const session = sessions[data.sessionKey];
         session.setX(data.x)
-        session.setY(data.Y)
+        session.setY(data.y)
+        session.setDirection(data.direction)
+        session.setInterval(data.interval)
     });
 
 })
