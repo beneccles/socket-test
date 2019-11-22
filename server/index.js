@@ -1,0 +1,6 @@
+require('dotenv').config()
+const express = require('express')
+const socket = require('socket.io')
+const session = require('express-session')
+const cors = require('cors')
+const bodyParser = require('body-parser')
